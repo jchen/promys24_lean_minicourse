@@ -1,0 +1,1 @@
+# promys24_lean_minicourse
