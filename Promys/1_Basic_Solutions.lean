@@ -71,62 +71,86 @@ theorem proof_of_5_7_coprime : Nat.gcd 5 7 = 1 := by trivial
 theorem prop_comp (a b c : Prop) (hab : a → b) (hbc : b → c) :
   a → c :=
   by
-    sorry
+    intro ha
+    apply hbc
+    apply hab
+    apply ha
 
 theorem fst_of_two_props_exact (a b : Prop) (ha : a) (hb : b) :
   a :=
-  by
-    sorry
+  by exact ha
 
-theorem fst_of_two_props_assumption
-  (a b : Prop) (ha : a) (hb : b) : a :=
-  by
-    sorry
+theorem fst_of_two_props_assumption (a b : Prop)
+    (ha : a) (hb : b) :
+  a :=
+  by assumption
 
 -- Introduction and Elimination Rules
 
 theorem And_swap (a b : Prop) :
   a ∧ b → b ∧ a :=
   by
-    sorry
+    intro hab
+    apply And.intro
+    apply And.right
+    exact hab
+    apply And.left
+    exact hab
 
 theorem And_swap_braces :
   ∀a b : Prop, a ∧ b → b ∧ a :=
   by
-    sorry
+    intro a b hab
+    apply And.intro
+    { exact And.right hab }
+    { exact And.left hab }
 
 opaque f : ℕ → ℕ
 
 theorem f5_if (h : ∀n : ℕ, f n = n) :
   f 5 = 5 :=
-  by
-    sorry
+  by exact h 5
 
 theorem Or_swap (a b : Prop) :
   a ∨ b → b ∨ a :=
   by
-    sorry
+    intro hab
+    apply Or.elim hab
+    { intro ha
+      exact Or.inr ha }
+    { intro hb
+      exact Or.inl hb }
 
 theorem modus_ponens (a b : Prop) :
   (a → b) → a → b :=
   by
-    sorry
+    intro hab ha
+    apply hab
+    exact ha
 
 theorem Not_Not_intro (a : Prop) :
   a → ¬¬ a :=
   by
-    sorry
+    intro ha hna
+    apply hna
+    exact ha
 
 theorem Eq_trans_symm_rw {α : Type} (a b c : α)
     (hab : a = b) (hcb : c = b) :
   a = c :=
   by
-    sorry
+    rw [hab]
+    rw [hcb]
 
 theorem a_proof_of_negation (a : Prop) :
   a → ¬¬ a :=
   by
-    sorry
+    rw [Not]
+    rw [Not]
+    intro ha
+    intro hna
+    apply hna
+    exact ha
 
 -- How do we prove this?
 theorem funny_proof (a : Prop) :
