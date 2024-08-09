@@ -17,8 +17,8 @@ EVERYTHING in Lean has a type! We can check its type using #type
 #check {x : ℤ | ∃ k, x = 2 * k}
 
 -- We can define functions on numbers
-def f x := -1 * x
-#check f
+def h x := -1 * x
+#check h
 -- A (ℤ → ℤ) means it takes an integer and returns an integer.
 
 -- We might write it like this
@@ -26,7 +26,7 @@ def f x := -1 * x
 
 -- Types must match! What if we tried to pass it a Cartesian coordinate? (type error)
 def p := (1, 2)
-#check f p
+#check h p
 
 -- We can have multiple arguments
 def g x y := x * y + 4
