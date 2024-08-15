@@ -10,4 +10,4 @@ Then, on the upper right of this page, you should be able to select the `<> Code
 
 ## Getting Started
 
-Refer to our guide for more details on how to get started. Generally, you should be able to select into a `.lean` file and toggle the infoview by selecting the `∀` symbol. <kbd>Ctrl</kbd> or <kbd>Cmd</kbd>-clicking a term will jump to its definition, which is really useful for inspecting library theorems. Refer to the other links in the minicourse notes for more ways to get started! 
+Refer to our guide for more details on how to get started. Generally, you should be able to select into a `.lean` file (look in the `Promys` folder!) and toggle the infoview by selecting the `∀` symbol. <kbd>Ctrl</kbd> or <kbd>Cmd</kbd>-clicking a term will jump to its definition, which is really useful for inspecting library theorems. Refer to the other links in the minicourse notes for more ways to get started! 
